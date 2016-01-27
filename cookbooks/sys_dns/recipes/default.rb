@@ -48,9 +48,9 @@ end
 # Setting up appropriate DNS provider
 sys_dns "default" do
   provider "sys_dns_#{node.set[:sys_dns][:choice]}"
-  user node.set[:sys_dns][:user]
-  password node.set[:sys_dns][:password]
-  region node.set[:sys_dns][:region]
+  user node[:sys_dns][:user]
+  password node[:sys_dns][:password]
+  region node[:sys_dns][:region]
   persist true
   action :nothing
 end
